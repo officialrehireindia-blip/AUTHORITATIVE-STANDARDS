@@ -1,0 +1,6 @@
+{
+  "name": "Corps Security",
+  "description": "Premium security agency in Pune, India offering Security Guard Services, Executive Protection, and Event Security under under tactical CIA meets Rolex luxury aesthetics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

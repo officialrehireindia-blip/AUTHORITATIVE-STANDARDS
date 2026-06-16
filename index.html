@@ -1,0 +1,1621 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CORPS SECURITY | Strength You Can Trust. Protection You Can Count On.</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind v3/v4 Play CDN with custom theme config -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              corpsBlack: '#0A0A0A',
+              corpsGold: '#C9A84C',
+              corpsNavy: '#1A1A2E',
+              corpsSlate: '#AAAAAA',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              bebas: ['Bebas Neue', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    
+    <!-- tsParticles CDN for fluid golden particle background -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom CSS for specialized 3D properties and unique effects -->
+    <style>
+      /* Custom selection color */
+      ::selection {
+        background-color: #C9A84C;
+        color: #0A0A0A;
+      }
+      
+      /* Gold shimmer animation */
+      @keyframes goldLaserWipe {
+        0% {
+          background-position: -200% center;
+        }
+        100% {
+          background-position: 200% center;
+        }
+      }
+      .gold-shimmer {
+        background: linear-gradient(120deg, #947a32 15%, #C9A84C 45%, #fff9e6 50%, #C9A84C 55%, #947a32 85%);
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: goldLaserWipe 6s linear infinite;
+      }
+      
+      /* Subtle premium pulse for CTAs */
+      @keyframes goldPulse {
+        0%, 100% {
+          box-shadow: 0 0 10px rgba(201, 168, 76, 0.2);
+        }
+        50% {
+          box-shadow: 0 0 25px rgba(201, 168, 76, 0.55);
+        }
+      }
+      .btn-pulse {
+        animation: goldPulse 3s infinite;
+      }
+
+      /* CSS 3D Card Flip definitions */
+      .card-3d-wrap {
+        perspective: 1200px;
+        min-height: 380px;
+      }
+      .card-3d-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+      .card-3d-wrap:hover .card-3d-inner,
+      .card-3d-wrap.flipped .card-3d-inner {
+        transform: rotateY(180deg);
+      }
+      .card-front, .card-back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        border-radius: 4px;
+      }
+      .card-back {
+        transform: rotateY(180deg);
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0A0A0A;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #1C1C1C;
+        border: 2px solid #0A0A0A;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #C9A84C;
+      }
+
+      /* Scroll animations state classes */
+      .scroll-reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 1s cubic-bezier(0.215, 0.61, 0.355, 1), transform 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+        will-change: transform, opacity;
+      }
+      .scroll-reveal.revealed {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Glassmorphism generic utility */
+      .glass-morphic {
+        background: rgba(10, 10, 10, 0.75);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+      
+      /* Hidden scrollbar helper for horizontal scrolling */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      /* 3D tilt transform */
+      .tilt-element {
+        transform-style: preserve-3d;
+        transition: transform 0.15s ease-out;
+        will-change: transform;
+      }
+    </style>
+  </head>
+  <body class="bg-corpsBlack text-white font-sans overflow-x-hidden antialiased">
+
+    <!-- Sticky Smart Navbar with blur -->
+    <header id="main-nav" class="fixed top-0 left-0 w-full z-50 glass-morphic border-b border-white/5 transition-all duration-300 transform translate-y-0 py-4">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          
+          <!-- Logo left side with Gold shimmer -->
+          <a href="#" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-corpsGold/50 rounded-sm">
+            <div id="nav-badge" class="w-10 h-10 border border-corpsGold flex items-center justify-center relative bg-corpsNavy/40 overflow-hidden">
+              <span class="font-bebas text-lg font-bold text-corpsGold group-hover:scale-110 transition-transform duration-300">CS</span>
+              <div class="absolute inset-0 bg-gradient-to-t from-corpsGold/20 to-transparent"></div>
+            </div>
+            <div class="flex flex-col">
+              <span class="font-bebas text-[28px] font-bold tracking-wider leading-none gold-shimmer uppercase">CORPS SECURITY</span>
+              <span class="text-[9px] font-mono tracking-[0.35em] text-corpsSlate uppercase">Tactical Excellence</span>
+            </div>
+          </a>
+
+          <!-- Nav Menu - Desktop -->
+          <nav class="hidden lg:flex items-center gap-8">
+            <a href="#services" class="text-sm font-medium tracking-wide text-corpsSlate hover:text-corpsGold hover:tracking-widest transition-all duration-300">SERVICES</a>
+            <a href="#why-choose-us" class="text-sm font-medium tracking-wide text-corpsSlate hover:text-corpsGold hover:tracking-widest transition-all duration-300">WHY US</a>
+            <a href="#how-it-works" class="text-sm font-medium tracking-wide text-corpsSlate hover:text-corpsGold hover:tracking-widest transition-all duration-300">HOW IT WORKS</a>
+            <a href="#testimonials" class="text-sm font-medium tracking-wide text-corpsSlate hover:text-corpsGold hover:tracking-widest transition-all duration-300">TESTIMONIALS</a>
+            <a href="#about-ceo" class="text-sm font-medium tracking-wide text-corpsSlate hover:text-corpsGold hover:tracking-widest transition-all duration-300">ABOUT / CEO</a>
+            <a href="#contact" class="text-sm font-medium tracking-wide text-corpsSlate hover:text-corpsGold hover:tracking-widest transition-all duration-300">CONTACT</a>
+          </nav>
+
+          <!-- GET QUOTE CTA Right side -->
+          <div class="hidden sm:flex items-center gap-4">
+            <a href="#contact" class="px-6 py-2.5 border border-corpsGold text-corpsGold text-xs font-mono font-semibold tracking-wider hover:bg-corpsGold hover:text-corpsBlack transition-all duration-300 bg-transparent rounded-none focus:outline-none focus:ring-2 focus:ring-corpsGold/70">
+              GET SECURE QUOTE
+            </a>
+          </div>
+
+          <!-- Burger Menu - Mobile -->
+          <div class="lg:hidden flex items-center">
+            <button id="menu-toggle" class="text-corpsSlate hover:text-white p-2 focus:outline-none focus:ring-2 focus:ring-corpsGold/50 rounded" aria-label="Toggle navigation menu">
+              <i data-lucide="menu" class="w-6 h-6 transition-transform duration-300" id="hamburger-icon"></i>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Mobile Sliding Drawer Panel -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-white/5 bg-corpsBlack/95 backdrop-blur-xl absolute top-full left-0 w-full transition-all duration-300 overflow-hidden max-h-0">
+        <div class="px-6 py-8 space-y-6 flex flex-col font-mono text-center">
+          <a href="#services" class="mobile-nav-link text-base tracking-widest text-corpsSlate hover:text-corpsGold transition-colors duration-300">SERVICES</a>
+          <a href="#why-choose-us" class="mobile-nav-link text-base tracking-widest text-corpsSlate hover:text-corpsGold transition-colors duration-300">WHY US</a>
+          <a href="#how-it-works" class="mobile-nav-link text-base tracking-widest text-corpsSlate hover:text-corpsGold transition-colors duration-300">HOW IT WORKS</a>
+          <a href="#testimonials" class="mobile-nav-link text-base tracking-widest text-corpsSlate hover:text-corpsGold transition-colors duration-300">TESTIMONIALS</a>
+          <a href="#about-ceo" class="mobile-nav-link text-base tracking-widest text-corpsSlate hover:text-corpsGold transition-colors duration-300">ABOUT / CEO</a>
+          <a href="#contact" class="mobile-nav-link text-base tracking-widest text-corpsSlate hover:text-corpsGold transition-colors duration-300">CONTACT</a>
+          <div class="pt-4 border-t border-white/10">
+            <a href="#contact" class="mobile-nav-link inline-block w-full px-6 py-3 border border-corpsGold text-corpsGold hover:bg-corpsGold hover:text-corpsBlack tracking-widest text-sm font-semibold transition-all duration-300">
+              GET QUOTE NOW
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Fullscreen Hero section with tsParticles and 3D Tilt Badge Card -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center pt-28 overflow-hidden z-10">
+      
+      <!-- Static backplate underlay -->
+      <div class="absolute inset-0 bg-[#07070a]/90 z-0"></div>
+      
+      <!-- Floating tsParticles div layout -->
+      <div id="tsparticles" class="absolute inset-0 z-10 pointer-events-none opacity-80" aria-hidden="true"></div>
+      
+      <!-- Visual geometric overlay representing high tactical telemetry -->
+      <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-corpsBlack to-transparent z-10"></div>
+      <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-corpsBlack to-transparent z-10"></div>
+      
+      <!-- Horizontal layout structure representing CIA meets Rolex aesthetic -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-20 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Hero Text Details left-side (7 columns) -->
+        <div class="lg:col-span-7 flex flex-col space-y-8 text-left">
+          
+          <!-- Tactical pre-header ticker -->
+          <div class="inline-flex items-center gap-3">
+            <span class="w-1.5 h-1.5 bg-corpsGold rounded-full animate-ping"></span>
+            <span class="text-xs font-mono font-semibold tracking-[0.4em] text-corpsGold uppercase">MISSION ALPHA ACTIVE</span>
+            <span class="hidden md:inline px-2 py-0.5 border border-white/10 bg-white/5 text-[9px] font-mono text-corpsSlate uppercase">HQ: PUNE, INDIA</span>
+          </div>
+          
+          <h1 class="font-bebas text-5xl sm:text-7xl xl:text-8xl font-black text-white tracking-widest leading-[0.9] select-none text-balance">
+            WE PROTECT <br class="hidden sm:inline" />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-corpsGold via-[#ECCF83] to-white">WHAT MATTERS MOST</span>
+          </h1>
+          
+          <p class="text-base sm:text-lg text-corpsSlate leading-relaxed max-w-xl font-sans">
+            "Strength You Can Trust. Protection You Can Count On." Leading elite tactical bodyguard details, executive secure transfers, event fortification, and custom asset defense with <span class="text-white font-medium">zero operational compromise</span>.
+          </p>
+          
+          <!-- CTA Action Row -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
+            <a href="#contact" class="px-8 py-4 bg-corpsGold text-corpsBlack hover:bg-[#B3933C] text-sm font-semibold tracking-widest text-center uppercase transition-all duration-300 btn-pulse focus:outline-none focus:ring-2 focus:ring-corpsGold/65 font-mono select-none">
+              SECURE CONVERSATION
+            </a>
+            <a href="#services" class="px-8 py-4 border border-white/20 bg-white/5 hover:border-corpsGold hover:bg-corpsGold/10 text-white text-sm font-semibold tracking-widest text-center uppercase transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50 font-mono select-none">
+              CAPABILITIES
+            </a>
+          </div>
+
+          <!-- Quick facts display bar -->
+          <div class="grid grid-cols-3 gap-4 pt-8 border-t border-white/5 text-left font-mono">
+            <div>
+              <span class="block text-xl font-bold text-white leading-none">PUNE</span>
+              <span class="text-[10px] text-corpsSlate uppercase tracking-wider">PRIMARY HUB</span>
+            </div>
+            <div>
+              <span class="block text-xl font-bold text-corpsGold leading-none">>99.9%</span>
+              <span class="text-[10px] text-corpsSlate uppercase tracking-wider">INTEGRITY RATE</span>
+            </div>
+            <div>
+              <span class="block text-xl font-bold text-white leading-none">CLASS-A</span>
+              <span class="text-[10px] text-corpsSlate uppercase tracking-wider">TACTICAL REGIME</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Mouse-Tracked 3D Tilt Card Component right-side (5 columns) -->
+        <div class="lg:col-span-5 flex justify-center lg:justify-end items-center py-6">
+          <div id="tilt-card-container" class="w-full max-w-sm aspect-[4/5] border border-corpsGold/30 bg-[#0E0E18] p-8 relative flex flex-col justify-between overflow-hidden shadow-2xl tilt-element" style="box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);">
+            
+            <!-- Tech corner borders representing Rolex/CIA level styling -->
+            <div class="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-corpsGold"></div>
+            <div class="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-corpsGold"></div>
+            <div class="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-corpsGold"></div>
+            <div class="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-corpsGold"></div>
+            
+            <!-- Abstract faint vector security hologram layer -->
+            <div class="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#C9A84C_1px,transparent_1px)] [background-size:16px_16px]"></div>
+            <div class="absolute w-56 h-56 -top-12 -left-12 bg-corpsGold/5 rounded-full filter blur-xl"></div>
+            
+            <!-- Heading of telemetry block -->
+            <div class="relative z-10 flex items-center justify-between font-mono text-xs text-corpsSlate border-b border-white/5 pb-4">
+              <span class="tracking-widest">TACTICAL MATRIX</span>
+              <span class="text-corpsGold">[SEC_CONF_V3]</span>
+            </div>
+
+            <!-- Main graphic display in center - absolute custom visual layout -->
+            <div class="my-6 relative flex flex-col items-center justify-center space-y-4">
+              <div class="w-24 h-24 rounded-full border border-corpsGold/40 flex items-center justify-center relative bg-corpsBlack shadow-inner">
+                <i data-lucide="shield-check" class="w-12 h-12 text-corpsGold animate-pulse"></i>
+                <div class="absolute inset-0 rounded-full border border-dashed border-corpsGold/20 animate-[spin_30s_linear_infinite]"></div>
+              </div>
+              <div class="text-center">
+                <h3 class="font-bebas text-3xl font-bold tracking-widest text-white leading-tight">CORPS PREMIER</h3>
+                <p class="text-[11px] font-mono tracking-widest text-corpsGold uppercase">DEPLOYABLE PROTECTION INDEX</p>
+              </div>
+            </div>
+
+            <!-- List of security badges -->
+            <div class="space-y-3 font-mono text-[10px] tracking-wider relative z-10">
+              <div class="flex justify-between items-center bg-white/5 p-2.5 border-l-2 border-corpsGold">
+                <span class="text-corpsSlate uppercase">CEO Escort Services</span>
+                <span class="text-white font-bold uppercase">Ready</span>
+              </div>
+              <div class="flex justify-between items-center bg-white/5 p-2.5 border-l-2 border-corpsGold">
+                <span class="text-corpsSlate uppercase">Armed Guard Contingency</span>
+                <span class="text-white font-bold uppercase">ACTIVE</span>
+              </div>
+              <div class="flex justify-between items-center bg-white/5 p-2.5 border-l-2 border-white/20">
+                <span class="text-corpsSlate uppercase">Global Command Node</span>
+                <span class="text-corpsGold font-bold uppercase">Online</span>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-white/5 flex items-center justify-between text-[9px] font-mono text-corpsSlate mt-2">
+              <span>LATENCY: 4.8ms</span>
+              <span id="threat-indicator" class="text-green-400">STATUS: ENCRYPTED SECURE</span>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- 6 Services Grid Section with 3D Reveal Hover Card flips -->
+    <section id="services" class="relative py-28 bg-[#08080c] z-20 border-t border-b border-white/5 scroll-mt-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header -->
+        <div class="text-center max-w-3xl mx-auto mb-20 scroll-reveal">
+          <span class="text-xs font-mono font-semibold tracking-[0.4em] text-corpsGold uppercase block mb-3">// INTEGRATED DEFENSE SYSTEMS</span>
+          <h2 class="font-bebas text-5xl sm:text-6xl font-black tracking-widest leading-none text-white">OPERATIONAL CAPABILITIES</h2>
+          <div class="w-16 h-1 bg-corpsGold mx-auto my-6"></div>
+          <p class="text-corpsSlate text-base leading-relaxed">
+            Our comprehensive tactical lineup is tailored to individual threat metrics. Click or hover on any capability card to inspect specific deployment coordinates.
+          </p>
+        </div>
+
+        <!-- 3D Card flips Grid (6 elements) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Card 1: Security Guards -->
+          <div class="card-3d-wrap group cursor-pointer focus:outline-none scroll-reveal" onclick="this.classList.toggle('flipped')" tabindex="0" aria-label="Security Guards Service details. Click to flip.">
+            <div class="card-3d-inner">
+              
+              <!-- Card Front -->
+              <div class="card-front bg-corpsBlack border border-white/5 group-hover:border-corpsGold/50 p-8 flex flex-col justify-between transition-colors duration-500">
+                <div class="space-y-6">
+                  <div class="w-14 h-14 border border-corpsGold bg-corpsNavy/20 flex items-center justify-center">
+                    <i data-lucide="shield" class="w-7 h-7 text-corpsGold"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-bebas text-2xl tracking-widest text-white leading-tight mb-2">TACTICAL MANPOWER</h3>
+                    <p class="text-xs font-mono text-corpsGold uppercase tracking-widest">Premium Guard Services</p>
+                  </div>
+                  <p class="text-sm text-corpsSlate leading-relaxed">
+                    Elite, highly disciplined armed and unarmed ground forces stationed for continuous safeguarding.
+                  </p>
+                </div>
+                <div class="flex items-center gap-2 text-xs font-mono text-corpsGold hover:text-white pt-4">
+                  <span>TAP TO REVEAL PLAN</span>
+                  <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                </div>
+              </div>
+
+              <!-- Card Back -->
+              <div class="card-back bg-corpsNavy border border-corpsGold p-8 flex flex-col justify-between">
+                <div class="space-y-4 text-left">
+                  <div class="flex justify-between items-center border-b border-white/10 pb-3">
+                    <span class="text-xs font-mono text-corpsGold">DEPLOYMENT [01]</span>
+                    <i data-lucide="info" class="w-4 h-4 text-corpsGold"></i>
+                  </div>
+                  <h4 class="font-bebas text-xl text-white tracking-wider uppercase">ZERO COMPROMISE PROTOCOL</h4>
+                  <ul class="text-xs text-corpsSlate space-y-2 border-b border-white/5 pb-4 leading-relaxed font-mono">
+                    <li class="flex items-start gap-2"><span class="text-corpsGold">•</span> Strict military backgrounds required</li>
+                    <li class="flex items-start gap-2"><span class="text-corpsGold">•</span> Intensive situational defense training</li>
+                    <li class="flex items-start gap-2"><span class="text-corpsGold">•</span> Real-time response center coordinates Mapping</li>
+                  </ul>
+                  <p class="text-xs text-corpsSlate leading-relaxed">
+                    Perfect for protecting corporate headquarters, luxurious residential assets, and gated structures with constant oversight.
+                  </p>
+                </div>
+                <button class="w-full py-2.5 bg-corpsGold text-corpsBlack font-mono font-bold text-xs uppercase hover:bg-white transition-colors duration-300">
+                  REQUEST DEPLOYMENT
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Card 2: Executive Protection -->
+          <div class="card-3d-wrap group cursor-pointer focus:outline-none scroll-reveal" onclick="this.classList.toggle('flipped')" tabindex="0" aria-label="Executive Protection Service details. Click to flip.">
+            <div class="card-3d-inner">
+              
+              <!-- Card Front -->
+              <div class="card-front bg-corpsBlack border border-white/5 group-hover:border-corpsGold/50 p-8 flex flex-col justify-between transition-colors duration-500">
+                <div class="space-y-6">
+                  <div class="w-14 h-14 border border-corpsGold bg-corpsNavy/20 flex items-center justify-center">
+                    <i data-lucide="user-check" class="w-7 h-7 text-corpsGold"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-bebas text-2xl tracking-widest text-white leading-tight mb-2">EXECUTIVE SHIELD</h3>
+                    <p class="text-xs font-mono text-corpsGold uppercase tracking-widest">Close VIP Escort Details</p>
+                  </div>
+                  <p class="text-sm text-corpsSlate leading-relaxed">
+                    Specialized tactical defense details protecting politicians, corporate leaders, and high net worth individuals.
+                  </p>
+                </div>
+                <div class="flex items-center gap-2 text-xs font-mono text-corpsGold hover:text-white pt-4">
+                  <span>TAP TO REVEAL PLAN</span>
+                  <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                </div>
+              </div>
+
+              <!-- Card Back -->
+              <div class="card-back bg-corpsNavy border border-corpsGold p-8 flex flex-col justify-between">
+                <div class="space-y-4 text-left">
+                  <div class="flex justify-between items-center border-b border-white/10 pb-3">
+                    <span class="text-xs font-mono text-corpsGold">DEPLOYMENT [02]</span>
+                    <i data-lucide="user" class="w-4 h-4 text-corpsGold"></i>
+                  </div>
+                  <h4 class="font-bebas text-xl text-white tracking-wider uppercase">CLOSE QUARTERS COUNTER</h4>
+                  <ul class="text-xs text-corpsSlate space-y-2 border-b border-white/5 pb-4 leading-relaxed font-mono">
+                    <li class="flex items-start gap-2"><span class="text-corpsGold">•</span> Advance escape routing and threat tracking</li>
+                    <li class="flex items-start gap-2"><span class="text-corpsGold">•</span> Non-disruptive, highly covert surveillance</li>
+                    <li class="flex items-start gap-2"><span class="text-corpsGold">•</span> 24/7 dedicated executive travel concierge</li>
+                  </ul>
+                  <p class="text-xs text-corpsSlate leading-relaxed">
+                    Tailored closely to provide premium cover, private jet defense buffers, and seamless executive security without attention.
+                  </p>
+                </div>
+                <button class="w-full py-2.5 bg-corpsGold text-corpsBlack font-mono font-bold text-xs uppercase hover:bg-white transition-colors duration-300">
+                  REQUEST DEPLOYMENT
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Card 3: Armed Bouncers -->
+          <div class="card-3d-wrap group cursor-pointer focus:outline-none scroll-reveal" onclick="this.classList.toggle('flipped')" tabindex="0" aria-label="Armed Bouncers details. Click to flip.">
+            <div class="card-3d-inner">
+              
+              <!-- Card Front -->
+              <div class="card-front bg-corpsBlack border border-white/5 group-hover:border-corpsGold/50 p-8 flex flex-col justify-between transition-colors duration-500">
+                <div class="space-y-6">
+                  <div class="w-14 h-14 border border-corpsGold bg-corpsNavy/20 flex items-center justify-center">
+                    <i data-lucide="swords" class="w-7 h-7 text-corpsGold"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-bebas text-2xl tracking-widest text-white leading-tight mb-2">ARMED RESPONSE</h3>
+                    <p class="text-xs font-mono text-corpsGold uppercase tracking-widest">Tactical Countermeasures</p>
+                  </div>
+                  <p class="text-sm text-corpsSlate leading-relaxed">
+                    Elite civilian defenders certified with verified carry credentials for high-threat response details.
+                  </p>
+                </div>
+                <div class="flex items-center gap-2 text-xs font-mono text-corpsGold hover:text-white pt-4">
+                  <span>TAP TO REVEAL PLAN</span>
+                  <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                </div>
+              </div>
+
+              <!-- Card Back -->
+              <div class="card-back bg-corpsNavy border border-corpsGold p-8 flex flex-col justify-between">
+                <div class="space-y-4 text-left">
+                  <div class="flex justify-between items-center border-b border-white/10 pb-3">
+                    <span class="text-xs font-mono text-corpsGold">DEPLOYMENT [03]</span>
+                    <i data-lucide="lock" class="w-4 h-4 text-corpsGold"></i>
+                  </div>
+                  <h4 class="font-bebas text-xl text-white tracking-wider uppercase">ARMED DE-ESCALATION</h4>
+                  <ul class="text-xs text-corpsSlate space-y-2 border-b border-white/5 pb-4 leading-relaxed font-mono">
+                    <li class="flex items-start gap-2"><span class="text-corpsGold">•</span> Certified active firearm permit verification</li>
+                    <li class="flex items-start gap-2"><span class="text-corpsGold">•</span> Intense de-escalation psychological vetting</li>
+                    <li class="flex items-start gap-2"><span class="text-corpsGold">•</span> High impact physical defense maneuvers</li>
+                  </ul>
+                  <p class="text-xs text-corpsSlate leading-relaxed">
+                    Provides maximum presence bouncers for premium events, jewelry transfers, high-risk wealth shielding, or courtroom protection.
+                  </p>
+                </div>
+                <button class="w-full py-2.5 bg-corpsGold text-corpsBlack font-mono font-bold text-xs uppercase hover:bg-white transition-colors duration-300">
+                  REQUEST DEPLOYMENT
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Card 4: Event Security -->
+          <div class="card-3d-wrap group cursor-pointer focus:outline-none scroll-reveal" onclick="this.classList.toggle('flipped')" tabindex="0" aria-label="Event Security details. Click to flip.">
+            <div class="card-3d-inner">
+              
+              <!-- Card Front -->
+              <div class="card-front bg-corpsBlack border border-white/5 group-hover:border-corpsGold/50 p-8 flex flex-col justify-between transition-colors duration-500">
+                <div class="space-y-6">
+                  <div class="w-14 h-14 border border-corpsGold bg-corpsNavy/20 flex items-center justify-center">
+                    <i data-lucide="users" class="w-7 h-7 text-corpsGold"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-bebas text-2xl tracking-widest text-white leading-tight mb-2">CROWD FORTRESS</h3>
+                    <p class="text-xs font-mono text-corpsGold uppercase tracking-widest">Multi-Tiered Concerts & meets</p>
+                  </div>
+                  <p class="text-sm text-corpsSlate leading-relaxed">
+                    Comprehensive strategic planning, perimeter fencing logistics, checkpoints, and back-stage buffer setups.
+                  </p>
+                </div>
+                <div class="flex items-center gap-2 text-xs font-mono text-corpsGold hover:text-white pt-4">
+                  <span>TAP TO REVEAL PLAN</span>
+                  <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                </div>
+              </div>
+
+              <!-- Card Back -->
+              <div class="card-back bg-corpsNavy border border-corpsGold p-8 flex flex-col justify-between">
+                <div class="space-y-4 text-left">
+                  <div class="flex justify-between items-center border-b border-white/10 pb-3">
+                    <span class="text-xs font-mono text-corpsGold">DEPLOYMENT [04]</span>
+                    <i data-lucide="map-pin" class="w-4 h-4 text-corpsGold"></i>
+                  </div>
+                  <h4 class="font-bebas text-xl text-white tracking-wider uppercase">PERIMETER GRID PROTOCOLS</h4>
+                  <ul class="text-xs text-corpsSlate space-y-2 border-b border-white/5 pb-4 leading-relaxed font-mono">
+                    <li class="flex items-start gap-2"><span class="text-corpsGold">•</span> High resolution visual grid thermal feeds</li>
+                    <li class="flex items-start gap-2"><span class="text-corpsGold">•</span> Rapid emergency medical exit clear paths</li>
+                    <li class="flex items-start gap-2"><span class="text-corpsGold">•</span> Multi-zone intercom coordination</li>
+                  </ul>
+                  <p class="text-xs text-corpsSlate leading-relaxed">
+                    Ensuring absolute control over high-occupancy crowds, festivals, political rallies, and stadium arenas with strategic logistics.
+                  </p>
+                </div>
+                <button class="w-full py-2.5 bg-corpsGold text-corpsBlack font-mono font-bold text-xs uppercase hover:bg-white transition-colors duration-300">
+                  REQUEST DEPLOYMENT
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Card 5: Global Coverage -->
+          <div class="card-3d-wrap group cursor-pointer focus:outline-none scroll-reveal" onclick="this.classList.toggle('flipped')" tabindex="0" aria-label="Global Coverage details. Click to flip.">
+            <div class="card-3d-inner">
+              
+              <!-- Card Front -->
+              <div class="card-front bg-corpsBlack border border-white/5 group-hover:border-corpsGold/50 p-8 flex flex-col justify-between transition-colors duration-500">
+                <div class="space-y-6">
+                  <div class="w-14 h-14 border border-corpsGold bg-corpsNavy/20 flex items-center justify-center">
+                    <i data-lucide="globe" class="w-7 h-7 text-corpsGold"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-bebas text-2xl tracking-widest text-white leading-tight mb-2">INTERNATIONAL REACH</h3>
+                    <p class="text-xs font-mono text-corpsGold uppercase tracking-widest">Global Escort Channels</p>
+                  </div>
+                  <p class="text-sm text-corpsSlate leading-relaxed">
+                    Unified defense networks spanning international corridors to guarantee security continuity as you travel.
+                  </p>
+                </div>
+                <div class="flex items-center gap-2 text-xs font-mono text-corpsGold hover:text-white pt-4">
+                  <span>TAP TO REVEAL PLAN</span>
+                  <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                </div>
+              </div>
+
+              <!-- Card Back -->
+              <div class="card-back bg-corpsNavy border border-corpsGold p-8 flex flex-col justify-between">
+                <div class="space-y-4 text-left">
+                  <div class="flex justify-between items-center border-b border-white/10 pb-3">
+                    <span class="text-xs font-mono text-corpsGold">DEPLOYMENT [05]</span>
+                    <i data-lucide="radio" class="w-4 h-4 text-corpsGold"></i>
+                  </div>
+                  <h4 class="font-bebas text-xl text-white tracking-wider uppercase">CONTINUOUS COURIER NODES</h4>
+                  <ul class="text-xs text-corpsSlate space-y-2 border-b border-white/5 pb-4 leading-relaxed font-mono">
+                    <li class="flex items-start gap-2"><span class="text-corpsGold">•</span> Unified coordinate tracking hubs</li>
+                    <li class="flex items-start gap-2"><span class="text-corpsGold">•</span> Global embassy liaison protocols</li>
+                    <li class="flex items-start gap-2"><span class="text-corpsGold">•</span> Multi-lingual protection commanders</li>
+                  </ul>
+                  <p class="text-xs text-corpsSlate leading-relaxed">
+                    Perfect for multinational corporate transfers, executive board journeys, secure legal documentation escort, and diplomatic details.
+                  </p>
+                </div>
+                <button class="w-full py-2.5 bg-corpsGold text-corpsBlack font-mono font-bold text-xs uppercase hover:bg-white transition-colors duration-300">
+                  REQUEST DEPLOYMENT
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Card 6: Corporate Security -->
+          <div class="card-3d-wrap group cursor-pointer focus:outline-none scroll-reveal" onclick="this.classList.toggle('flipped')" tabindex="0" aria-label="Corporate Security details. Click to flip.">
+            <div class="card-3d-inner">
+              
+              <!-- Card Front -->
+              <div class="card-front bg-corpsBlack border border-white/5 group-hover:border-corpsGold/50 p-8 flex flex-col justify-between transition-colors duration-500">
+                <div class="space-y-6">
+                  <div class="w-14 h-14 border border-corpsGold bg-corpsNavy/20 flex items-center justify-center">
+                    <i data-lucide="building" class="w-7 h-7 text-corpsGold"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-bebas text-2xl tracking-widest text-white leading-tight mb-2">ENTERPRISE SHIELD</h3>
+                    <p class="text-xs font-mono text-corpsGold uppercase tracking-widest">Fortune 500 Infrastructure Auditing</p>
+                  </div>
+                  <p class="text-sm text-corpsSlate leading-relaxed">
+                    Industrial complex surveillance planning, systematic threat modeling, and premium security staff management.
+                  </p>
+                </div>
+                <div class="flex items-center gap-2 text-xs font-mono text-corpsGold hover:text-white pt-4">
+                  <span>TAP TO REVEAL PLAN</span>
+                  <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                </div>
+              </div>
+
+              <!-- Card Back -->
+              <div class="card-back bg-corpsNavy border border-corpsGold p-8 flex flex-col justify-between">
+                <div class="space-y-4 text-left">
+                  <div class="flex justify-between items-center border-b border-white/10 pb-3">
+                    <span class="text-xs font-mono text-corpsGold">DEPLOYMENT [06]</span>
+                    <i data-lucide="server" class="w-4 h-4 text-corpsGold"></i>
+                  </div>
+                  <h4 class="font-bebas text-xl text-white tracking-wider uppercase">SYSTEMIC AUDIT REGIME</h4>
+                  <ul class="text-xs text-corpsSlate space-y-2 border-b border-white/5 pb-4 leading-relaxed font-mono">
+                    <li class="flex items-start gap-2"><span class="text-corpsGold">•</span> Penetration audit of building perimeters</li>
+                    <li class="flex items-start gap-2"><span class="text-corpsGold">•</span> Access badge credential system audits</li>
+                    <li class="flex items-start gap-2"><span class="text-corpsGold">•</span> On-site intelligence storage defense</li>
+                  </ul>
+                  <p class="text-xs text-corpsSlate leading-relaxed">
+                    Essential coverage for Tech Parks, secure server centers, gold vaults, factories, corporate estates, and critical enterprise infrastructure in Pune.
+                  </p>
+                </div>
+                <button class="w-full py-2.5 bg-corpsGold text-corpsBlack font-mono font-bold text-xs uppercase hover:bg-white transition-colors duration-300">
+                  REQUEST DEPLOYMENT
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4 Stats Section with animated counter numbers on entering viewport -->
+    <section id="why-choose-us" class="relative py-24 bg-corpsBlack z-20 overflow-hidden border-b border-white/5 scroll-mt-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Subtle tactical coordinate graphic background grid -->
+        <div class="absolute inset-0 opacity-[0.03] pointer-events-none bg-[linear-gradient(to_right,#C9A84C_1px,transparent_1px),linear-gradient(to_bottom,#C9A84C_1px,transparent_1px)] [background-size:4rem_4rem]" aria-hidden="true"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+          
+          <!-- Statistics text intro (5 columns) -->
+          <div class="lg:col-span-5 space-y-6 text-left scroll-reveal">
+            <span class="text-xs font-mono tracking-[0.4em] text-corpsGold uppercase block">// VERIFIABLE METRICS</span>
+            <h2 class="font-bebas text-4xl sm:text-5xl font-black text-white tracking-widest leading-none">
+              PROVEN DEPLOYMENT TRACK RECORD
+            </h2>
+            <div class="w-12 h-1 bg-corpsGold"></div>
+            <p class="text-sm text-corpsSlate leading-relaxed">
+              Experience speaks through zero compromise. Our tactical figures representing protection deployments across India and international operations are verified through rigorous quarterly auditing parameters.
+            </p>
+            <div class="pt-4 flex items-center gap-4 text-xs font-mono text-corpsGold">
+              <i data-lucide="award" class="w-5 h-5 text-corpsGold animate-bounce"></i>
+              <span class="tracking-wider uppercase">GOVERNMENT AUDITED SECURITY STANDARDS</span>
+            </div>
+          </div>
+
+          <!-- Counter Cards Grid (7 columns) -->
+          <div class="lg:col-span-7 grid grid-cols-2 gap-4 sm:gap-6">
+            
+            <!-- Cards 1 -->
+            <div class="p-6 sm:p-8 bg-gradient-to-br from-[#12121e] to-corpsBlack border border-white/5 flex flex-col justify-between min-h-[160px] relative overflow-hidden group hover:border-corpsGold/30 transition-all duration-300 scroll-reveal">
+              <div class="absolute top-0 right-0 w-16 h-16 bg-corpsGold/5 rounded-full filter blur-md transform translate-x-4 -translate-y-4 group-hover:scale-150 transition-all duration-500"></div>
+              <div class="text-corpsGold">
+                <i data-lucide="shield-alert" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <span class="block font-bebas text-4xl sm:text-5xl font-bold tracking-widest text-white leading-none mb-1">
+                  <span class="stat-counter font-mono" data-target="500">0</span><span class="text-corpsGold font-mono">+</span>
+                </span>
+                <span class="text-[10px] font-mono text-corpsSlate uppercase tracking-wider block">TACTICAL OPERATIVES</span>
+              </div>
+            </div>
+
+            <!-- Cards 2 -->
+            <div class="p-6 sm:p-8 bg-gradient-to-br from-[#12121e] to-corpsBlack border border-white/5 flex flex-col justify-between min-h-[160px] relative overflow-hidden group hover:border-corpsGold/30 transition-all duration-300 scroll-reveal">
+              <div class="absolute top-0 right-0 w-16 h-16 bg-corpsGold/5 rounded-full filter blur-md transform translate-x-4 -translate-y-4 group-hover:scale-150 transition-all duration-500"></div>
+              <div class="text-corpsGold">
+                <i data-lucide="star" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <span class="block font-bebas text-4xl sm:text-5xl font-bold tracking-widest text-white leading-none mb-1">
+                  <span class="stat-counter font-mono" data-target="200">0</span><span class="text-corpsGold font-mono">+</span>
+                </span>
+                <span class="text-[10px] font-mono text-corpsSlate uppercase tracking-wider block">PREMIUM EVENTS SECURED</span>
+              </div>
+            </div>
+
+            <!-- Cards 3 -->
+            <div class="p-6 sm:p-8 bg-gradient-to-br from-[#12121e] to-corpsBlack border border-white/5 flex flex-col justify-between min-h-[160px] relative overflow-hidden group hover:border-corpsGold/30 transition-all duration-300 scroll-reveal">
+              <div class="absolute top-0 right-0 w-16 h-16 bg-corpsGold/5 rounded-full filter blur-md transform translate-x-4 -translate-y-4 group-hover:scale-150 transition-all duration-500"></div>
+              <div class="text-corpsGold">
+                <i data-lucide="map" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <span class="block font-bebas text-4xl sm:text-5xl font-bold tracking-widest text-white leading-none mb-1">
+                  <span class="stat-counter font-mono" data-target="10">0</span><span class="text-corpsGold font-mono">+</span>
+                </span>
+                <span class="text-[10px] font-mono text-corpsSlate uppercase tracking-wider block">CORE INDIAN METROS</span>
+              </div>
+            </div>
+
+            <!-- Cards 4 -->
+            <div class="p-6 sm:p-8 bg-gradient-to-br from-[#12121e] to-corpsBlack border border-white/5 flex flex-col justify-between min-h-[160px] relative overflow-hidden group hover:border-corpsGold/30 transition-all duration-300 scroll-reveal">
+              <div class="absolute top-0 right-0 w-16 h-16 bg-corpsGold/5 rounded-full filter blur-md transform translate-x-4 -translate-y-4 group-hover:scale-150 transition-all duration-500"></div>
+              <div class="text-corpsGold">
+                <i data-lucide="phone-call" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <span class="block font-bebas text-4xl sm:text-5xl font-bold tracking-widest text-white leading-none mb-1">
+                  <span class="stat-counter font-mono" data-target="24">0</span><span class="text-corpsGold font-mono">/7</span>
+                </span>
+                <span class="text-[10px] font-mono text-corpsSlate uppercase tracking-wider block">COMMAND STATION MONITORING</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3-Step Process "HOW IT WORKS" with connect timeline visualizer -->
+    <section id="how-it-works" class="relative py-28 bg-[#08080c] z-20 border-b border-white/5 scroll-mt-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        
+        <!-- Page Title -->
+        <div class="text-center max-w-3xl mx-auto mb-24 scroll-reveal">
+          <span class="text-xs font-mono font-semibold tracking-[0.4em] text-corpsGold uppercase block mb-3">// RIGOROUS DEFENSE LIFECYCLE</span>
+          <h2 class="font-bebas text-5xl sm:text-6xl font-black tracking-widest leading-none text-white">THE STRATEGIC CONVOY</h2>
+          <div class="w-16 h-1 bg-corpsGold mx-auto my-6"></div>
+          <p class="text-corpsSlate text-base leading-relaxed">
+            Our protection sequence operates within structured tactical gates. From threat estimation to tactical deployment, execution is seamless.
+          </p>
+        </div>
+
+        <!-- Timeline Connector - Horizontal on desktop, Vertical on mobile -->
+        <div class="absolute top-[280px] lg:top-[310px] left-8 lg:left-1/2 right-8 lg:-translate-x-1/2 h-0.5 lg:w-[calc(100%-14rem)] bg-white/10 z-0 pointer-events-none hidden md:block">
+          <!-- Active highlight bar controlled by JS or layout -->
+          <div id="timeline-highlight" class="h-full bg-gradient-to-r from-corpsGold to-[#eccf83] w-0 transition-all duration-700 ease-out"></div>
+        </div>
+
+        <!-- Mobile vertical timeline bar representation -->
+        <div class="absolute top-[240px] bottom-[100px] left-12 w-0.5 bg-white/10 z-0 pointer-events-none md:hidden" aria-hidden="true">
+          <div id="timeline-highlight-mobile" class="w-full bg-corpsGold h-0 transition-all duration-700 ease-out"></div>
+        </div>
+
+        <!-- 3 Step elements -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10">
+          
+          <!-- Step 1 -->
+          <div class="flex flex-col items-start md:items-center text-left md:text-center group scroll-reveal relative px-6">
+            
+            <!-- Icon/Indicator Bubble -->
+            <div class="w-16 h-16 border border-corpsGold bg-corpsBlack flex items-center justify-center relative shadow-xl z-20 group-hover:scale-110 transition-transform duration-300 md:mb-8 ml-6 md:ml-0">
+              <span class="font-bebas text-lg font-bold text-corpsGold">01</span>
+              <div class="absolute -inset-1 border border-dashed border-corpsGold/20 animate-[spin_10s_linear_infinite] rounded-sm group-hover:border-corpsGold"></div>
+            </div>
+            
+            <!-- Mobile line connector support element -->
+            <div class="absolute left-10 md:left-auto top-16 md:top-auto h-24 w-0.5 bg-white/5 z-0 md:hidden block"></div>
+
+            <h3 class="font-bebas text-2xl tracking-widest text-white leading-tight mb-3 mt-4 md:mt-0">1. THREAT AUDIT</h3>
+            <p class="text-xs font-mono text-corpsGold uppercase tracking-widest mb-3">Comprehensive Inquiry</p>
+            <p class="text-sm text-corpsSlate leading-relaxed max-w-xs">
+              We audit structural access boundaries, research background coordinates, and map transit paths with custom threat matrices.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="flex flex-col items-start md:items-center text-left md:text-center group scroll-reveal relative px-6">
+            
+            <!-- Icon/Indicator Bubble -->
+            <div class="w-16 h-16 border border-corpsGold bg-corpsBlack flex items-center justify-center relative shadow-xl z-20 group-hover:scale-110 transition-transform duration-300 md:mb-8 ml-6 md:ml-0">
+              <span class="font-bebas text-lg font-bold text-corpsGold">02</span>
+              <div class="absolute -inset-1 border border-dashed border-corpsGold/20 animate-[spin_10s_linear_infinite] rounded-sm group-hover:border-corpsGold"></div>
+            </div>
+            
+            <!-- Mobile line connector support element -->
+            <div class="absolute left-10 md:left-auto top-16 md:top-auto h-24 w-0.5 bg-white/5 z-0 md:hidden block"></div>
+
+            <h3 class="font-bebas text-2xl tracking-widest text-white leading-tight mb-3 mt-4 md:mt-0">2. CHOREOGRAPHY</h3>
+            <p class="text-xs font-mono text-corpsGold uppercase tracking-widest mb-3">Tactical Blueprinting</p>
+            <p class="text-sm text-corpsSlate leading-relaxed max-w-xs">
+              Formulation of private security placement protocols, exit channels, perimeter check points, and backup response setups.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="flex flex-col items-start md:items-center text-left md:text-center group scroll-reveal relative px-6">
+            
+            <!-- Icon/Indicator Bubble -->
+            <div class="w-16 h-16 border border-corpsGold bg-corpsBlack flex items-center justify-center relative shadow-xl z-20 group-hover:scale-110 transition-transform duration-300 md:mb-8 ml-6 md:ml-0">
+              <span class="font-bebas text-lg font-bold text-corpsGold">03</span>
+              <div class="absolute -inset-1 border border-dashed border-corpsGold/20 animate-[spin_10s_linear_infinite] rounded-sm group-hover:border-corpsGold"></div>
+            </div>
+
+            <h3 class="font-bebas text-2xl tracking-widest text-white leading-tight mb-3 mt-4 md:mt-0">3. ENFORCEMENT</h3>
+            <p class="text-xs font-mono text-corpsGold uppercase tracking-widest mb-3">Operational Deployment</p>
+            <p class="text-sm text-corpsSlate leading-relaxed max-w-xs">
+              Direct physical staging of bouncers and elite armed guards with real-time central coordinate sync with headquarters.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Multi-Testimonials Slider Scroll Carousel Panel -->
+    <section id="testimonials" class="relative py-28 bg-[#0a0a0F] z-20 overflow-hidden border-b border-white/5 scroll-mt-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Title Header -->
+        <div class="flex flex-col md:flex-row items-start md:items-end justify-between mb-16 scroll-reveal">
+          <div class="space-y-4 max-w-2xl text-left">
+            <span class="text-xs font-mono tracking-[0.4em] text-corpsGold uppercase block">// VOICES OF ASSURANCE</span>
+            <h2 class="font-bebas text-4xl sm:text-5xl font-black text-white tracking-widest leading-none">
+              TRUSTED BY INTELLECTUALS & ENTERPRISES
+            </h2>
+            <div class="w-12 h-1 bg-corpsGold"></div>
+          </div>
+          <div class="hidden md:flex items-center gap-2 font-mono text-xs text-corpsSlate mt-4 md:mt-0">
+            <i data-lucide="mouse-pointer" class="w-4 h-4 text-corpsGold"></i>
+            <span>HOVER TO PAUSE CONTINUOUS CAROUSEL</span>
+          </div>
+        </div>
+
+        <!-- Testimonial Slider Wrapper -->
+        <div class="relative w-full overflow-hidden select-none" id="carousel-outer">
+          
+          <!-- Left and Right visual smooth gradients representation of luxury sliders -->
+          <div class="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#0a0a0F] to-transparent z-10 pointer-events-none"></div>
+          <div class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#0a0a0F] to-transparent z-10 pointer-events-none"></div>
+
+          <!-- Sliding track -->
+          <div id="carousel-track" class="flex gap-6 overflow-x-auto py-4 scroll-smooth no-scrollbar" style="scroll-snap-type: x mandatory;">
+            
+            <!-- Cards 1 -->
+            <div class="min-w-[280px] sm:min-w-[420px] max-w-[450px] p-8 bg-gradient-to-b from-[#11111a] to-[#0A0A0A] border border-white/5 scroll-snap-align-start flex flex-col justify-between relative relative group hover:border-corpsGold/30 transition-all duration-300">
+              <div class="absolute top-4 right-4 text-white/5 font-serif text-7xl font-bold select-none leading-none pointer-events-none">“</div>
+              <div class="space-y-6 text-left">
+                <div class="flex items-center gap-1.5 text-corpsGold">
+                  <i data-lucide="star" class="w-4 h-4 fill-corpsGold"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-corpsGold"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-corpsGold"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-corpsGold"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-corpsGold"></i>
+                </div>
+                <p class="text-sm text-corpsSlate leading-relaxed italic font-sans">
+                  "CORPS SECURITY executed VIP escort routines with absolute class and CIA-level precision during our strategic tech summit in Pune. Zero vulnerabilities encountered."
+                </p>
+              </div>
+              <div class="mt-8 pt-6 border-t border-white/5 flex items-center gap-4">
+                <div class="w-10 h-10 border border-corpsGold rounded-full flex items-center justify-center bg-corpsBlack">
+                  <i data-lucide="user" class="w-5 h-5 text-corpsGold"></i>
+                </div>
+                <div>
+                  <span class="block text-xs font-bold font-mono text-white uppercase tracking-wider">HARSH VARDHAN SHAH</span>
+                  <span class="block text-[10px] text-corpsSlate uppercase tracking-widest font-mono">MD, Global Capital Holdings</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cards 2 -->
+            <div class="min-w-[280px] sm:min-w-[420px] max-w-[450px] p-8 bg-gradient-to-b from-[#11111a] to-[#0A0A0A] border border-white/5 scroll-snap-align-start flex flex-col justify-between relative relative group hover:border-corpsGold/30 transition-all duration-300">
+              <div class="absolute top-4 right-4 text-white/5 font-serif text-7xl font-bold select-none leading-none pointer-events-none">“</div>
+              <div class="space-y-6 text-left">
+                <div class="flex items-center gap-1.5 text-corpsGold">
+                  <i data-lucide="star" class="w-4 h-4 fill-corpsGold"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-corpsGold"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-corpsGold"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-corpsGold"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-corpsGold"></i>
+                </div>
+                <p class="text-sm text-corpsSlate leading-relaxed italic font-sans">
+                  "The armed guards and bouncer contingents managed our celebrity concert venue flawlessly. Their intense situational monitoring kept crowds perfectly cataloged."
+                </p>
+              </div>
+              <div class="mt-8 pt-6 border-t border-white/5 flex items-center gap-4">
+                <div class="w-10 h-10 border border-corpsGold rounded-full flex items-center justify-center bg-corpsBlack">
+                  <i data-lucide="users" class="w-5 h-5 text-corpsGold"></i>
+                </div>
+                <div>
+                  <span class="block text-xs font-bold font-mono text-white uppercase tracking-wider">RIA DE SOUZA</span>
+                  <span class="block text-[10px] text-corpsSlate uppercase tracking-widest font-mono">CEO, Arena Live Entertainment</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cards 3 -->
+            <div class="min-w-[280px] sm:min-w-[420px] max-w-[450px] p-8 bg-gradient-to-b from-[#11111a] to-[#0A0A0A] border border-white/5 scroll-snap-align-start flex flex-col justify-between relative relative group hover:border-corpsGold/30 transition-all duration-300">
+              <div class="absolute top-4 right-4 text-white/5 font-serif text-7xl font-bold select-none leading-none pointer-events-none">“</div>
+              <div class="space-y-6 text-left">
+                <div class="flex items-center gap-1.5 text-corpsGold">
+                  <i data-lucide="star" class="w-4 h-4 fill-corpsGold"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-corpsGold"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-corpsGold"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-corpsGold"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-corpsGold"></i>
+                </div>
+                <p class="text-sm text-corpsSlate leading-relaxed italic font-sans">
+                  "Ashish Mule's tactical teams audited our secure warehouse complexes in Pune. The resulting continuous perimeter defense blueprint is world class."
+                </p>
+              </div>
+              <div class="mt-8 pt-6 border-t border-white/5 flex items-center gap-4">
+                <div class="w-10 h-10 border border-corpsGold rounded-full flex items-center justify-center bg-corpsBlack">
+                  <i data-lucide="building" class="w-5 h-5 text-corpsGold"></i>
+                </div>
+                <div>
+                  <span class="block text-xs font-bold font-mono text-white uppercase tracking-wider">ANIRUDH DESHMUKH</span>
+                  <span class="block text-[10px] text-corpsSlate uppercase tracking-widest font-mono">VP Operations, Auto Dynamics India</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- split Page Layout "ABOUT / CEO" showing custom visual styling frame and CEO Ashish Mule -->
+    <section id="about-ceo" class="relative py-28 bg-[#07070a] z-20 border-b border-white/5 scroll-mt-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+          
+          <!-- CEO Photo Section with Double gold border offsets (5 columns) -->
+          <div class="lg:col-span-5 flex flex-col items-center justify-center relative scroll-reveal">
+            
+            <!-- Styled frame -->
+            <div class="relative w-full max-w-[340px] aspect-square p-3 border border-white/10 bg-corpsBlack shadow-xl group">
+              <!-- Top-left glowing offset border -->
+              <div class="absolute -top-3 -left-3 w-1/2 h-1/2 border-t border-l border-corpsGold"></div>
+              <!-- Bottom-right glowing offset border -->
+              <div class="absolute -bottom-3 -right-3 w-1/2 h-1/2 border-b border-r border-corpsGold"></div>
+              
+              <!-- Real curated photo portrait instead of mock gray block -->
+              <div class="w-full h-full overflow-hidden relative border border-white/5 bg-[#14141d]">
+                <img 
+                  src="/input_file_0.png" 
+                  alt="Ashish Mule, CEO of CORPS SECURITY" 
+                  referrerPolicy="no-referrer"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
+                />
+                <!-- Subtle golden gradient overlay -->
+                <div class="absolute inset-0 bg-gradient-to-t from-corpsBlack/80 via-transparent to-transparent"></div>
+              </div>
+            </div>
+
+            <!-- Under photo banner names -->
+            <div class="text-center mt-8 space-y-2">
+              <h3 class="font-bebas text-3xl font-black text-white tracking-widest uppercase">ASHISH MULE</h3>
+              <p class="text-[11px] font-mono font-semibold tracking-widest text-corpsGold uppercase">FOUNDER & CHIEF EXECUTIVE OFFICER</p>
+              
+              <!-- Direct Instagram Badge Link -->
+              <a href="https://www.instagram.com/official_ashish_mule_/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-1.5 border border-white/10 hover:border-corpsGold hover:bg-gradient-to-r hover:from-purple-900/40 hover:to-pink-900/30 text-white text-[11px] font-mono tracking-wider transition-all duration-300 rounded-none mt-2">
+                <i data-lucide="instagram" class="w-3.5 h-3.5 text-corpsGold animate-pulse"></i>
+                <span>FOLLOW @official_ashish_mule_</span>
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Company Narrative Paragraph (7 columns) -->
+          <div class="lg:col-span-7 space-y-8 text-left scroll-reveal">
+            
+            <div class="space-y-4">
+              <span class="text-xs font-mono tracking-[0.4em] text-corpsGold uppercase block">// REFINED LEADERSHIP PRINCIPLES</span>
+              <h2 class="font-bebas text-5xl sm:text-6xl font-black text-white tracking-widest leading-none">
+                AUTHORITATIVE STANDARDS
+              </h2>
+              <div class="w-16 h-1 bg-corpsGold"></div>
+            </div>
+
+            <div class="space-y-6 text-sm sm:text-base text-corpsSlate leading-relaxed">
+              <p>
+                Founded by <span class="text-white font-medium">Ashish Mule</span> in Pune, Maharashtra, <strong class="text-white">CORPS SECURITY</strong> is born from an uncompromising pursuit of absolute safety and refined defense protocols. We do not provide standard, commercial personnel. Instead, we operationalize deep tactical bouncer teams, executive shielding squads, and certified military-grade security guard operatives who regard safety as an absolute, non-negotiable directive.
+              </p>
+              <p>
+                Our aesthetic mimics the secure luxury of global close-defense agencies. Blending high tactical awareness with executive class, we protect corporate assets, live concert compounds, sovereign nodes, VIP transfers, and luxury environments across Pune and beyond.
+              </p>
+              <p class="font-mono text-xs text-corpsGold leading-normal italic">
+                "In our perimeter, variables do not exist. We map every single exit path, audit all possible points of failure, and stage immediate enforcement units. We guarantee your tranquility under any threat coordinate."
+              </p>
+            </div>
+
+            <!-- Authentic Signature block -->
+            <div class="pt-6 border-t border-white/5 flex items-center justify-between">
+              <div>
+                <span class="block text-white font-mono text-xs tracking-wider">ASHISH MULE</span>
+                <span class="text-[10px] text-corpsSlate font-mono uppercase tracking-[0.2em]">OPERATIONS DIRECTOR, PUNE</span>
+              </div>
+              <div class="w-24 h-8 border border-white/10 flex items-center justify-center uppercase font-mono text-[9px] text-corpsSlate select-none">
+                SIGNATURE SECURED
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PREMIUM CONTACT SECTION featuring input elements and direct WhatsApp pulsars -->
+    <section id="contact" class="relative py-28 bg-[#0a0a0F] z-20 scroll-mt-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Headers -->
+        <div class="text-center max-w-3xl mx-auto mb-16 scroll-reveal">
+          <span class="text-xs font-mono font-semibold tracking-[0.4em] text-corpsGold uppercase block mb-3">// ESTABLISH PRIVATE LINK</span>
+          <h2 class="font-bebas text-5xl sm:text-6xl font-black tracking-widest leading-none text-white">SECURE INTAKE PANEL</h2>
+          <div class="w-16 h-1 bg-corpsGold mx-auto my-6"></div>
+          <p class="text-corpsSlate text-base leading-relaxed">
+            Begin the threat audit cycle. Inform our Pune Operations command center of your asset requirements. All telemetry is managed with maximum confidentiality.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+          
+          <!-- Interactive Quick Contact Details Panel left-side (5 columns) -->
+          <div class="lg:col-span-5 bg-gradient-to-b from-[#12121a] to-corpsBlack border border-white/5 p-8 flex flex-col justify-between relative scroll-reveal">
+            
+            <div class="absolute top-0 right-0 w-24 h-24 bg-corpsGold/5 rounded-full filter blur-xl"></div>
+
+            <div class="space-y-8 text-left">
+              <h3 class="font-bebas text-3xl font-black tracking-widest text-white border-b border-white/5 pb-4">
+                PUNE CENTRAL HQ
+              </h3>
+              
+              <!-- Coordinates Lists -->
+              <div class="space-y-6 font-mono text-sm">
+                
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 border border-corpsGold flex items-center justify-center shrink-0 bg-corpsBlack">
+                    <i data-lucide="map-pin" class="w-5 h-5 text-corpsGold"></i>
+                  </div>
+                  <div>
+                    <span class="block text-white text-xs font-bold uppercase tracking-wider">COMMAND LOCATION</span>
+                    <p class="text-xs text-corpsSlate mt-1">
+                      Koregaon Park, Pune, Maharashtra, 411001, India
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 border border-corpsGold flex items-center justify-center shrink-0 bg-corpsBlack">
+                    <i data-lucide="mail" class="w-5 h-5 text-corpsGold"></i>
+                  </div>
+                  <div>
+                    <span class="block text-white text-xs font-bold uppercase tracking-wider">SECURE TRANSMISSION</span>
+                    <a href="mailto:info@corpssecurity.co.in" class="text-xs text-corpsSlate hover:text-corpsGold transition-colors mt-1 block">
+                      info@corpssecurity.in (placeholder)
+                    </a>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 border border-corpsGold flex items-center justify-center shrink-0 bg-corpsBlack">
+                    <i data-lucide="phone" class="w-5 h-5 text-corpsGold"></i>
+                  </div>
+                  <div>
+                    <span class="block text-white text-xs font-bold uppercase tracking-wider">DIAL FREQUENCY</span>
+                    <a href="tel:+919876543210" class="text-xs text-corpsSlate hover:text-corpsGold transition-colors mt-1 block">
+                      +91 98765 43210 (placeholder)
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Instagram/WhatsApp Instant Action Row -->
+            <div class="pt-12 border-t border-white/5 space-y-4">
+              <span class="block font-mono text-[10px] text-corpsSlate uppercase tracking-wider text-left">// ACTIVE CHANNELS</span>
+              <div class="flex gap-4">
+                <a href="https://www.instagram.com/official_ashish_mule_/" target="_blank" rel="noopener noreferrer" class="flex-1 py-3 border border-white/10 hover:border-corpsGold flex items-center justify-center gap-2 text-xs font-mono tracking-widest text-white hover:text-corpsGold transition-all duration-300">
+                  <i data-lucide="instagram" class="w-4 h-4"></i>
+                  <span>CEO INSTAGRAM</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Direct Intake Field Form with WhatsApp action button builder right-side (7 columns) -->
+          <div class="lg:col-span-7 bg-corpsBlack border border-white/5 p-8 relative flex flex-col justify-between scroll-reveal">
+            
+            <div class="space-y-6 text-left">
+              <h3 class="font-bebas text-3xl font-black tracking-widest text-white mb-2">WHATSAPP CONVERSATION BUILDER</h3>
+              <p class="text-xs font-mono text-corpsGold uppercase tracking-widest border-b border-white/5 pb-4">
+                Customize your immediate threat assessment text details
+              </p>
+
+              <!-- Form Input Items -->
+              <form id="secure-form" class="space-y-4 pt-2 font-mono text-xs">
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div class="space-y-1.5">
+                    <label for="client-name" class="text-corpsSlate uppercase tracking-wider">Client Name *</label>
+                    <input 
+                      type="text" 
+                      id="client-name" 
+                      required 
+                      placeholder="e.g. Director Shah" 
+                      class="w-full bg-[#12121e] border border-white/10 p-3 text-white focus:outline-none focus:border-corpsGold focus:ring-1 focus:ring-corpsGold tracking-wider"
+                    />
+                  </div>
+                  <div class="space-y-1.5">
+                    <label for="client-phone" class="text-corpsSlate uppercase tracking-wider">Direct Hotline *</label>
+                    <input 
+                      type="tel" 
+                      id="client-phone" 
+                      required 
+                      placeholder="e.g. +91 99999-99999" 
+                      class="w-full bg-[#12121e] border border-white/10 p-3 text-white focus:outline-none focus:border-corpsGold focus:ring-1 focus:ring-corpsGold tracking-wider"
+                    />
+                  </div>
+                </div>
+
+                <div class="space-y-1.5">
+                  <label for="defense-need" class="text-corpsSlate uppercase tracking-wider">Operational Target *</label>
+                  <select 
+                    id="defense-need" 
+                    required 
+                    class="w-full bg-[#12121e] border border-white/10 p-3 text-white focus:outline-none focus:border-corpsGold focus:ring-1 focus:ring-corpsGold tracking-wider"
+                  >
+                    <option value="Security Guards Service">Security Guards & Manpower Setup</option>
+                    <option value="Executive Security (VIP Escort)">Executive Shield (VIP Escort Details)</option>
+                    <option value="Armed Bouncer Contingency">Armed Bouncers Deployment</option>
+                    <option value="Elite Concert Event security">Concert & Event Security Grid</option>
+                    <option value="Corporate complex Audit">Enterprise Asset Security Audit</option>
+                  </select>
+                </div>
+
+                <div class="space-y-1.5">
+                  <label for="client-notes" class="text-corpsSlate uppercase tracking-wider">Sourcing parameters & Special Instructions</label>
+                  <textarea 
+                    id="client-notes" 
+                    rows="3" 
+                    placeholder="Provide coordinate scopes, threat level assessment notes, or daily shift timelines..." 
+                    class="w-full bg-[#12121e] border border-white/10 p-3 text-white focus:outline-none focus:border-corpsGold focus:ring-1 focus:ring-corpsGold tracking-wider"
+                  ></textarea>
+                </div>
+
+              </form>
+            </div>
+
+            <!-- Instant WhatsApp Pulsing Action row -->
+            <div class="pt-8 border-t border-white/5 text-left mt-6">
+              <button 
+                type="button" 
+                id="whatsapp-submit" 
+                class="w-full sm:w-auto px-8 py-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-3 shadow-xl hover:shadow-emerald-900/40 select-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-400"
+              >
+                <i data-lucide="send" class="w-5 h-5 animate-pulse"></i>
+                <span class="font-mono text-sm leading-none">DEPLOY TO WHATSAPP (+91-XXXXXXXXXX)</span>
+              </button>
+              <span class="block text-[10px] font-mono text-corpsSlate mt-3 leading-normal">
+                * Initiates instant secure messaging thread. By deploying, your parameters are structured automatically for Ashish Mule's private review.
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- MINIMAL DARK FOOTER -->
+    <footer class="bg-corpsBlack text-corpsSlate border-t border-white/5 relative z-20 py-12 text-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-white/5">
+          
+          <!-- Logo left side -->
+          <a href="#" class="flex items-center gap-3 focus:outline-none focus:ring-2 focus:ring-corpsGold/50 rounded-sm">
+            <span class="font-bebas text-2xl font-bold tracking-wider text-white">CORPS SECURITY</span>
+          </a>
+
+          <!-- Navigation Links -->
+          <nav class="flex flex-wrap justify-center gap-6 font-mono text-xs tracking-wider">
+            <a href="#services" class="hover:text-corpsGold transition-colors">SERVICES</a>
+            <a href="#why-choose-us" class="hover:text-corpsGold transition-colors">WHY US</a>
+            <a href="#how-it-works" class="hover:text-corpsGold transition-colors">HOW</a>
+            <a href="#testimonials" class="hover:text-corpsGold transition-colors">TESTIMONIALS</a>
+            <a href="#about-ceo" class="hover:text-corpsGold transition-colors">CEO</a>
+            <a href="#contact" class="hover:text-corpsGold transition-colors">CONTACT</a>
+          </nav>
+
+        </div>
+
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6 pt-8 font-mono text-[10px]">
+          
+          <!-- Copyright Info & India timezone dynamic widget -->
+          <div class="flex flex-col items-center md:items-start space-y-2 text-center md:text-left">
+            <span>© 2026 CORPS SECURITY. DEPLOYED & AUDITED IN PUNE, INDIA.</span>
+            <span class="text-white">OPERATIONAL CLOCK STATUS: <span id="operational-clock" class="text-corpsGold font-bold">SECURED</span></span>
+          </div>
+
+          <!-- Social connections metrics -->
+          <div class="flex items-center gap-4">
+            <a href="https://www.instagram.com/official_ashish_mule_/" target="_blank" rel="noopener noreferrer" class="p-2 border border-white/10 hover:border-corpsGold hover:text-white transition-colors" aria-label="Visit Instagram Profile of Ashish Mule">
+              <i data-lucide="instagram" class="w-4 h-4"></i>
+            </a>
+            <div class="h-4 w-px bg-white/10"></div>
+            <span class="text-[9px] uppercase tracking-widest text-[#555555]">CRAFTED SECURE BY SENIOR DESIGNERS</span>
+          </div>
+
+        </div>
+
+      </div>
+    </footer>
+
+    <!-- VITE DEVELOPER PREVIEW ROOT MOUNT - KEPT GRACEFULLY SO React bundles safely -->
+    <div id="root" class="hidden pointer-events-none" aria-hidden="true"></div>
+    <script type="module" src="/src/main.tsx"></script>
+
+    <!-- VANILLA JAVASCRIPT MASTER CONTROL ENGINE -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        
+        // 1. Initialise Lucide icons
+        lucide.createIcons();
+
+        // 2. SMART NAVBAR STICKY ACTION
+        const navHeader = document.getElementById("main-nav");
+        let lastScrollY = window.pageYOffset;
+        let navbarHeight = navHeader.offsetHeight;
+
+        window.addEventListener("scroll", function () {
+          const currentScrollY = window.pageYOffset;
+          
+          // Add opacity/padding shift on scroll
+          if (currentScrollY > 50) {
+            navHeader.classList.add("py-2");
+            navHeader.classList.remove("py-4");
+            navHeader.classList.add("shadow-lg");
+          } else {
+            navHeader.classList.add("py-4");
+            navHeader.classList.remove("py-2");
+            navHeader.classList.remove("shadow-lg");
+          }
+
+          // Smart hide/show algorithm
+          if (currentScrollY > lastScrollY && currentScrollY > navbarHeight * 1.5) {
+            // Scroll Down - Hide Navbar
+            navHeader.style.transform = `translateY(-${navbarHeight + 30}px)`;
+          } else {
+            // Scroll Up - Show Navbar
+            navHeader.style.transform = "translateY(0)";
+          }
+          lastScrollY = currentScrollY;
+        }, { passive: true });
+
+        // 3. MOBILE MENU TRIGGER
+        const menuToggle = document.getElementById("menu-toggle");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const hamburgerIcon = document.getElementById("hamburger-icon");
+        let isMobileMenuOpen = false;
+
+        menuToggle.addEventListener("click", function () {
+          isMobileMenuOpen = !isMobileMenuOpen;
+          if (isMobileMenuOpen) {
+            mobileMenu.classList.remove("hidden");
+            // Animate max-height
+            setTimeout(() => {
+              mobileMenu.style.maxHeight = "500px";
+            }, 10);
+            hamburgerIcon.setAttribute("data-lucide", "x");
+          } else {
+            mobileMenu.style.maxHeight = "0";
+            setTimeout(() => {
+              mobileMenu.classList.add("hidden");
+            }, 300);
+            hamburgerIcon.setAttribute("data-lucide", "menu");
+          }
+          lucide.createIcons(); // Reactivate changed icon
+        });
+
+        // Close Mobile Menu on item click
+        const mobileLinks = document.querySelectorAll(".mobile-nav-link");
+        mobileLinks.forEach(link => {
+          link.addEventListener("click", () => {
+            if (isMobileMenuOpen) {
+              mobileMenu.style.maxHeight = "0";
+              setTimeout(() => {
+                mobileMenu.classList.add("hidden");
+              }, 300);
+              hamburgerIcon.setAttribute("data-lucide", "menu");
+              isMobileMenuOpen = false;
+              lucide.createIcons();
+            }
+          });
+        });
+
+        // 4. ANIMATED GOLD STATS COUNT-UP USING INTERSECTION OBSERVER
+        const startStatsCountUp = (entry) => {
+          const stats = entry.querySelectorAll(".stat-counter");
+          stats.forEach(counter => {
+            const target = parseInt(counter.getAttribute("data-target"), 10);
+            const duration = 2000; // 2 seconds
+            const startTime = performance.now();
+
+            const updateCount = (currentTime) => {
+              const elapsed = currentTime - startTime;
+              const progress = Math.min(elapsed / duration, 1);
+              
+              // Easing out quadratic function
+              const easeProgress = progress * (2 - progress);
+              const currentValue = Math.floor(easeProgress * target);
+
+              counter.textContent = currentValue;
+
+              if (progress < 1) {
+                requestAnimationFrame(updateCount);
+              } else {
+                counter.textContent = target; // Ensure perfect accuracy at finish
+              }
+            };
+            requestAnimationFrame(updateCount);
+          });
+        };
+
+        const statsSection = document.getElementById("why-choose-us");
+        let statsAnimated = false;
+        if (statsSection) {
+          const statsObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting && !statsAnimated) {
+                statsAnimated = true;
+                startStatsCountUp(entry.target);
+                observer.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.15 });
+          statsObserver.observe(statsSection);
+        }
+
+        // 5. SCROLL REVEAL INTERSECTION OBSERVER FOR FADE-IN + SLIDE-UP
+        const revealElements = document.querySelectorAll(".scroll-reveal");
+        const revealObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("revealed");
+            }
+          });
+        }, { threshold: 0.08, rootMargin: "0px 0px -50px 0px" });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // 6. HOW IT WORKS TIMELINE HIGHLIGHT ANIMATION ON SCROLL
+        const highlightLine = document.getElementById("timeline-highlight");
+        const highlightLineMobile = document.getElementById("timeline-highlight-mobile");
+        const timelineSection = document.getElementById("how-it-works");
+
+        const updateTimelineHeight = () => {
+          if (!timelineSection) return;
+          const rect = timelineSection.getBoundingClientRect();
+          const windowHeight = window.innerHeight;
+          
+          // Calculate percentage scrolled inside the timeline section
+          const startTrigger = windowHeight * 0.8;
+          const endTrigger = windowHeight * 0.2;
+          const totalDistance = rect.height;
+          const currentScroll = rect.top - startTrigger;
+          const progress = Math.min(Math.max(-currentScroll / (totalDistance - (startTrigger - endTrigger)), 0), 1);
+
+          if (highlightLine) {
+            highlightLine.style.width = `${progress * 100}%`;
+          }
+          if (highlightLineMobile) {
+            highlightLineMobile.style.height = `${progress * 100}%`;
+          }
+        };
+        window.addEventListener("scroll", updateTimelineHeight, { passive: true });
+
+        // 7. MULTI-TESTIMONIALS AUTO-SCROLL CAROUSEL WITH PAUSE ON HOVER
+        const carouselTrack = document.getElementById("carousel-track");
+        const carouselOuter = document.getElementById("carousel-outer");
+        let slideSpeed = 1; // scroll pixel distance per frame
+        let isHovered = false;
+        let scrollDirection = 1; // 1 for right, -1 for left
+
+        // Auto-Scrolling logic inside requestAnimationFrame
+        function scroller() {
+          if (!isHovered && carouselTrack) {
+            const maxScroll = carouselTrack.scrollWidth - carouselTrack.clientWidth;
+            
+            // Loop back seamlessly or switch scroll direction for infinite visual loop
+            if (carouselTrack.scrollLeft >= maxScroll) {
+              scrollDirection = -1;
+            } else if (carouselTrack.scrollLeft <= 0) {
+              scrollDirection = 1;
+            }
+            
+            carouselTrack.scrollLeft += slideSpeed * scrollDirection;
+          }
+          requestAnimationFrame(scroller);
+        }
+
+        // Run auto-scroll
+        requestAnimationFrame(scroller);
+
+        // Pause on mouse interaction
+        carouselOuter.addEventListener("mouseenter", () => isHovered = true);
+        carouselOuter.addEventListener("mouseleave", () => isHovered = false);
+        carouselOuter.addEventListener("touchstart", () => isHovered = true);
+        carouselOuter.addEventListener("touchend", () => isHovered = false);
+
+        // 8. HIGH-PERFORMANCE 3D TILT ON MOUSE TRACKING (HERO CARD)
+        const tiltElement = document.querySelector(".tilt-element");
+        const heroSection = document.getElementById("hero");
+
+        if (tiltElement && heroSection) {
+          heroSection.addEventListener("mousemove", (e) => {
+            const rx = e.clientX;
+            const ry = e.clientY;
+            const elRect = tiltElement.getBoundingClientRect();
+            
+            // Center coordinates
+            const cx = elRect.left + elRect.width / 2;
+            const cy = elRect.top + elRect.height / 2;
+            
+            // Mouse distance from center
+            const dx = rx - cx;
+            const dy = ry - cy;
+            
+            // Max bounds degrees tilt
+            const maxTilt = 12; 
+            const tiltX = (dy / (window.innerHeight / 2)) * maxTilt * -1;
+            const tiltY = (dx / (window.innerWidth / 2)) * maxTilt;
+            
+            requestAnimationFrame(() => {
+              tiltElement.style.transform = `perspective(800px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(1.02, 1.02, 1.02)`;
+            });
+          });
+
+          // Reset on mouse leave
+          heroSection.addEventListener("mouseleave", () => {
+            requestAnimationFrame(() => {
+              tiltElement.style.transform = `perspective(800px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+            });
+          });
+        }
+
+        // 9. WHATSAPP SUBMIT FORM ACTION BUILDER
+        const whatsappBtn = document.getElementById("whatsapp-submit");
+        whatsappBtn.addEventListener("click", function () {
+          const form = document.getElementById("secure-form");
+          
+          if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+          }
+
+          const clientName = document.getElementById("client-name").value;
+          const clientPhone = document.getElementById("client-phone").value;
+          const defenseNeed = document.getElementById("defense-need").value;
+          const clientNotes = document.getElementById("client-notes").value;
+
+          // Build elegant professional string parameter
+          const whatsappText = `*CORPS SECURITY INTAKE TRANSMISSION*%0A` + 
+                               `-----------------------------------------%0A` +
+                               `*Client Name:* ${clientName}%0A` +
+                               `*Direct Contact:* ${clientPhone}%0A` +
+                               `*Defense Need:* ${defenseNeed}%0A` +
+                               `*Direct Notes:* ${clientNotes}%0A` +
+                               `-----------------------------------------%0A` +
+                               `_Deployed from Pune Command Center (UTC+5:30)_`;
+
+          // Placeholder target WhatsApp number, e.g. +91 98765 43210
+          const whatsappUrl = `https://wa.me/919876543210?text=${whatsappText}`;
+          window.open(whatsappUrl, "_blank");
+        });
+
+        // 10. REAL-TIME UTC INDIA TIMEZONE OPERATIONAL CLOCK
+        function updateOperationalClock() {
+          const clock = document.getElementById("operational-clock");
+          if (!clock) return;
+          
+          const now = new Date();
+          // Convert to India Standard Time (IST) offset +5:30
+          const utcOffset = now.getTime() + (now.getTimezoneOffset() * 60000);
+          const iSTTime = new Date(utcOffset + (3600000 * 5.5));
+          
+          // Format elegantly
+          const hours = String(iSTTime.getHours()).padStart(2, '0');
+          const minutes = String(iSTTime.getMinutes()).padStart(2, '0');
+          const seconds = String(iSTTime.getSeconds()).padStart(2, '0');
+          
+          clock.textContent = `ONLINE [IST: ${hours}:${minutes}:${seconds}]`;
+        }
+        setInterval(updateOperationalClock, 1000);
+        updateOperationalClock();
+
+        // 11. INTENSIVELY TUNED GOLD PRESET PARTICLES INITIALISATION
+        if (typeof tsParticles !== "undefined") {
+          tsParticles.load("tsparticles", {
+            background: {
+              color: {
+                value: "transparent"
+              }
+            },
+            fpsLimit: 144,
+            particles: {
+              number: {
+                value: 40,
+                density: {
+                  enable: true,
+                  value_area: 800
+                }
+              },
+              color: {
+                value: "#C9A84C"
+              },
+              shape: {
+                type: "circle"
+              },
+              opacity: {
+                value: 0.5,
+                random: true,
+                anim: {
+                  enable: true,
+                  speed: 0.6,
+                  opacity_min: 0.15,
+                  sync: false
+                }
+              },
+              size: {
+                value: 2.2,
+                random: true,
+                anim: {
+                  enable: true,
+                  speed: 1,
+                  size_min: 0.8,
+                  sync: false
+                }
+              },
+              line_linked: {
+                enable: false
+              },
+              move: {
+                enable: true,
+                speed: 0.55,
+                direction: "top-right",
+                random: true,
+                straight: false,
+                out_mode: "out",
+                bounce: false,
+                attract: {
+                  enable: true,
+                  rotateX: 600,
+                  rotateY: 1200
+                }
+              }
+            },
+            interactivity: {
+              detect_on: "canvas",
+              events: {
+                onhover: {
+                  enable: true,
+                  mode: "repulse"
+                },
+                onclick: {
+                  enable: true,
+                  mode: "push"
+                },
+                resize: true
+              },
+              modes: {
+                repulse: {
+                  distance: 85,
+                  duration: 0.4
+                },
+                push: {
+                  particles_nb: 4
+                }
+              }
+            },
+            retina_detect: true
+          });
+        }
+
+      });
+    </script>
+  </body>
+</html>
